@@ -102,6 +102,10 @@ ul li {
     padding: 0.2rem 0;
 }
 
+li::marker {
+  color: var(--bs-gray);
+}
+
 .navbar-brand, .navbar-brand:hover, .navbar-brand:focus {
     color: white;
     text-decoration: none;
