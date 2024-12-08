@@ -4,32 +4,84 @@
     box-sizing: border-box;
 }
 
-.cabin-<uniquifier> {
-    font-family: "Cabin", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+html {
+    scroll-behavior: smooth;
+}
+
+.ubuntu-sans-regular {
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 body {
-    font-family: 'Cabin', sans-serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: "Ubuntu Sans", sans-serif;
     padding: 3rem;
     line-height: 1.5;
     background-color: var(--bs-gray-900);
+    background-image:  radial-gradient(#33393e 0.45px, transparent 0.45px), radial-gradient(#33393e 0.45px, #212529 0.45px);
+    background-size: 18px 18px;
+    background-position: 0 0,9px 9px;
     color: var(--bs-gray-100);
+}
+
+.container-fluid {
+    text-align: center;
 }
 
 h1 {
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 0;
     font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+.custom-hr-wrapper {
+    display: flex;
+    justify-content: center;
+    @media (min-width: 800px) {
+        max-width: 50%;
+        margin: 0 auto 2rem;
+    }
+    margin: 0 auto;
+}
+
+.custom-hr {
+    display: flex;
+    align-items: center;
+    color: var(--bs-gray-700);
+    width: 100%;
+}
+
+.custom-hr::before,
+.custom-hr::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px dashed var(--bs-gray-700);
+}
+
+.custom-hr::before {
+    margin-right: 10px;
+}
+
+.custom-hr::after {
+    margin-left: 10px;
+}
+
+.custom-hr span {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 button, select {
@@ -54,7 +106,7 @@ ul li {
     color: white;
     text-decoration: none;
     font-weight: normal;
-    pointer-events: none;
+    pointer-events: none; /* Disabled interactions */
 }
 
 .nav-link {
@@ -80,7 +132,7 @@ ul li {
     text-align: center;
     text-wrap: balance;
     @media (min-width: 800px) {
-        max-width: 60%;
+        max-width: 50%;
         margin: 0 auto 2rem;
     }
 }
@@ -91,11 +143,20 @@ ul li {
         margin: 0 auto 2rem;
     }
     margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.summary {
+    @media (min-width: 800px) {
+        max-width: 50%;
+        margin: 0 auto 2rem;
+    }
+    margin-top: 2rem;
     font-size: 1.1rem;
 }
 
 .accordion {
-    --bs-accordion-border-color: var(--bs-gray-700);
+    --bs-accordion-border-color: var(--bs-gray-800);
     @media (min-width: 800px) {
         max-width: 50%;
         margin: 0 auto;
@@ -105,22 +166,30 @@ ul li {
 .accordion-button {
     background-color: var(--bs-gray-900);
     color: var(--bs-cyan);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .accordion-button:not(.collapsed) {
     background-color: var(--bs-gray-900);
     color: var(--bs-cyan);
+    text-decoration: underline;
     box-shadow: none;
 }
 
 .accordion-button::after {
-    background-image: var(--bs-accordion-btn-active-icon);
+    background-image: url('data:image/svg+xml;charset=utf-8,%3csvg xmlns%3d"http%3a//www.w3.org/2000/svg" width%3d"16" height%3d"16" fill%3d"white" class%3d"bi bi-chevron-down" viewBox%3d"0 0 16 16"%3e%3cpath fill-rule%3d"evenodd" d%3d"M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/%3e%3c/svg%3e');
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url('data:image/svg+xml;charset=utf-8,%3csvg xmlns%3d"http%3a//www.w3.org/2000/svg" width%3d"16" height%3d"16" fill%3d"white" class%3d"bi bi-chevron-up" viewBox%3d"0 0 16 16"%3e%3cpath fill-rule%3d"evenodd" d%3d"M1.646 11.354a.5.5 0 0 1 .708 0L8 5.707l5.646 5.647a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1-.708 0l-6 6a.5.5 0 0 1 0 .708z"/%3e%3c/svg%3e');
 }
 
 .accordion-item {
-    background-color: var(--bs-gray-800);
-    color: var(--bs-gray-100);
+    background-color: var(--bs-gray-900);
+    color: var(--bs-gray-200);
 }
 
 footer {
@@ -130,3 +199,5 @@ footer {
     position: relative;
     bottom: 0;
 }
+
+
