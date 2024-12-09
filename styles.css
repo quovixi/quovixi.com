@@ -19,7 +19,7 @@ html {
 
 body {
     font-family: "Ubuntu Sans", sans-serif;
-    padding: 3rem;
+    padding: 2rem 1rem;
     line-height: 1.5;
     background-color: var(--bs-gray-900);
     background-image:  radial-gradient(#33393e 0.45px, transparent 0.45px), radial-gradient(#33393e 0.45px, #212529 0.45px);
