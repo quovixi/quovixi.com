@@ -64,7 +64,7 @@ h3 {
 }
 
 .project-image {
-    width: 40%; 
+    width: 100%; 
     max-width: 400px; 
     height: auto;
     border-radius: 4px;
