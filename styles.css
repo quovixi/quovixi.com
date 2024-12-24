@@ -64,6 +64,7 @@ h3 {
     flex-direction: row;
     align-items: flex-start;
     gap: 1.5rem; 
+    margin-bottom: 1.6rem;
 }
 
 .project-image {
@@ -82,13 +83,13 @@ h3 {
 .project-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    padding: 0;
     text-align: left;
 }
 
 .project-description {
     margin: 0.8rem 0;
     color: var(--bs-gray-300);
-    margin-bottom: 2rem;
 }
 
 @media (max-width: 1000px) {
