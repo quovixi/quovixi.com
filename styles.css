@@ -40,12 +40,14 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    padding: 1rem 0;
     margin-bottom: 0.4rem;
+    text-align: center;
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .projects-container {
@@ -80,6 +82,7 @@ h3 {
 .project-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .project-description {
@@ -88,9 +91,9 @@ h3 {
     margin-bottom: 2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .projects-container {
-        max-width: 80%;
+        max-width: 70%;
     }
 
     .project {
@@ -100,12 +103,8 @@ h3 {
 
     .project-image {
         width: 100%;
-        max-width: 300px;
     }
 
-    .project-details {
-        text-align: center;
-    }
 }
 
 .custom-hr-wrapper {
@@ -222,6 +221,10 @@ li::marker {
         max-width: 50%;
         margin: 0 auto;
     }
+}
+
+.accordion-header {
+    padding: 0;
 }
 
 .accordion-button {
