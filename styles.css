@@ -26,6 +26,7 @@ body {
     background-size: 18px 18px;
     background-position: 0 0,9px 9px;
     color: var(--bs-gray-100);
+    max-width: 1500px;
 }
 
 .container-fluid {
