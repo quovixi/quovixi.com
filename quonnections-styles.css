@@ -1,0 +1,185 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+.ubuntu-mono-regular {
+    font-family: "Ubuntu Mono", monospace;
+}
+
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0;
+    height: 100vh;
+    background-color: var(--bs-gray-900);
+    color: var(--bs-gray-100);
+    background-image: radial-gradient(#33393e 0.45px, transparent 0.45px), radial-gradient(#33393e 0.45px, #212529 0.45px);
+    background-size: 18px 18px;
+    background-position: 0 0,9px 9px;
+    -webkit-font-smoothing: antialiased; 
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+h2 {
+    margin-top: 1.4em;
+    font-size: 1.4em;
+}
+
+.back {
+    color: #e467a5;
+    text-decoration: none;
+}
+
+.back:hover,
+.back:focus,
+.back:active {
+    color: #f4a9c8;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: var(--bs-gray-800);
+    border: 2px solid var(--bs-gray-700);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s, transform 0.2s;
+    font-size: 1.2em;
+}
+
+.card.selected {
+    background-color: #C05279;
+    border-color: #e467a5;
+    transform: scale(1.05);
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #396CA9;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2D5284;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffc107;
+    text-align: center;
+    text-wrap: balance;
+}
+
+#incorrect-counter-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #121314;
+    color: #ffc107;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    z-index: 10;
+}
+
+#incorrect-counter {
+    font-weight: bold;
+}
+
+#correct-groups-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    #correct-groups-container {
+        padding: 10px 15px;
+    }
+}
+
+#correct-groups {
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.group {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.group strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.group span {
+    font-size: 1.1em;
+}
+
+.group:nth-child(1) { background-color: #FFF8B5; color: #000; } 
+.group:nth-child(2) { background-color: #D9C2F4; color: #000; }
+.group:nth-child(3) { background-color: #A8E6E6; color: #000; } 
+.group:nth-child(4) { background-color: #FFD9C0; color: #000; }
+
+@media (max-width: 768px) {
+    .card {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+
+    #game {
+        gap: 10px;
+    }
+
+    .card {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
