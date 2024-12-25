@@ -34,14 +34,14 @@ h2 {
     font-size: 1.4em;
 }
 
-.back {
+a {
     color: #e467a5;
     text-decoration: none;
 }
 
-.back:hover,
-.back:focus,
-.back:active {
+a:hover,
+a:focus,
+a:active {
     color: #f4a9c8;
 }
 
@@ -182,4 +182,12 @@ button:hover {
         font-size: 14px;
         padding: 8px 16px;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
