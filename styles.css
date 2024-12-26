@@ -93,6 +93,7 @@ h3 {
 }
 
 @media (max-width: 1000px) {
+
     .projects-container {
         max-width: 70%;
     }
@@ -105,7 +106,17 @@ h3 {
     .project-image {
         width: 100%;
     }
+}
 
+@media (max-width: 685px) {
+
+    .projects-container {
+        max-width: 95%;
+    }
+
+    .project {
+        margin-bottom: 0;
+    }
 }
 
 .custom-hr-wrapper {
