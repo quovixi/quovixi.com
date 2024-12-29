@@ -10,16 +10,11 @@ html {
 
 .ubuntu-sans-regular {
   font-family: "Ubuntu Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
 
 body {
     font-family: "Ubuntu Sans", sans-serif;
-    padding: 2rem 1rem;
+    padding: 0;
     line-height: 1.5;
     background-color: var(--bs-gray-900);
     background-image:  radial-gradient(#33393e 0.45px, transparent 0.45px), radial-gradient(#33393e 0.45px, #212529 0.45px);
@@ -27,6 +22,7 @@ body {
     background-position: 0 0,9px 9px;
     color: var(--bs-gray-100);
     max-width: 1500px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container-fluid {
@@ -178,6 +174,29 @@ li::marker {
   color: var(--bs-gray);
 }
 
+.resume-banner {
+    background-color: #FEBA3C;
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-image {
+    width: auto;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .resume-banner {
+        height: 200px;
+    }
+}
+
 .navbar-brand {
     color: #FEBA3C;
     text-decoration: none;
@@ -270,7 +289,7 @@ li::marker {
 
 footer {
     text-align: center;
-    padding: 2em 0;
+    padding: 2em 0 3em 0;
     width: 100%;
     position: relative;
     bottom: 0;
