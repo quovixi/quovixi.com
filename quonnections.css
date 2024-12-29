@@ -35,14 +35,14 @@ h2 {
 }
 
 a {
-    color: #e467a5;
+    color: #FEBA3C;
     text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-    color: #f4a9c8;
+    color: #FFD483;
 }
 
 #game {
@@ -79,7 +79,7 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #396CA9;
+    background-color: #7556FF;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -87,7 +87,7 @@ button {
 }
 
 button:hover {
-    background-color: #2D5284;
+    background-color: #6448E3;
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
 }
