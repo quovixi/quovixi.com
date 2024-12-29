@@ -161,12 +161,12 @@ button, select {
 }
 
 a {
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     text-decoration: underline;
 }
 
@@ -179,7 +179,7 @@ li::marker {
 }
 
 .navbar-brand {
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     text-decoration: none;
     font-size: 1rem;
 }
@@ -191,12 +191,12 @@ li::marker {
 }
 
 .nav-link {
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     margin: 0 0.5rem;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     text-decoration: underline;
 }
 
@@ -241,13 +241,13 @@ li::marker {
 
 .accordion-button {
     background-color: var(--bs-gray-900);
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     font-size: 1rem;
 }
 
 .accordion-button:not(.collapsed) {
     background-color: var(--bs-gray-900);
-    color: var(--bs-cyan);
+    color: #FEBA3C;
     text-decoration: underline;
     box-shadow: none;
 }
