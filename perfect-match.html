@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVES Compatibility Calculator</title>
+    <meta property="og:title" content="quovixi | perfect match" />
+    <meta property="og:description" content="That L.O.V.E.S name compatibility game you used to play when you were a kid. A project by Vicky Carmichael." />
+    <meta property="og:url" content="https://quovixi.com/" />
+    <meta property="og:image" content="https://quovixi.com/assets/perfect-match.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Hi+Melody&family=Shizuru&family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="perfect-match.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="ruled-paper" role="main">
+      <div class="ruled-paper-header"></div>
+      <div class="ruled-paper-body">
+          <div class="container">
+            <a href="/index.html" class="back-to-projects">↜ Back to projects</a>
+            <h1>L.♡.V.E.S</h1>
+            <h2>how compatible r u?</h2>
+            <label for="name1">First person:</label>
+            <input type="text" id="name1" placeholder="Romeo Montague">
+
+            <label for="name2">Second person:</label>
+            <input type="text" id="name2" placeholder="Juliet Capulet">
+
+            <div class="button-container">
+                <button class="button" onclick="calculateCompatibility()">perfect match?</button>
+                <div id="warning-message"></div>
+            </div>
+
+            <div class="result" id="result"></div>
+
+            <div class="expandable" id="expandable-section">
+                <span class="show-details" onclick="toggleDetails()">Show working out</span>
+                <div class="expandable-details" id="details"></div>
+            </div>
+            <footer>
+                <p><span class="irregular-strikethrough">Poprety</span> Property of <a href="https://quovixi.com" target="_blank">Vicky Carmichael</a>. Do <span class="double-underline">not</span> read!</p>
+            </footer>
+        </div>
+      </div>
+    </div>
+    <script src="perfect-match.js"></script>
+</body>
+</html>
