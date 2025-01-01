@@ -10,7 +10,7 @@ This project started life as my submission for CS50's Homepage problem set, to t
 
 ## Projects
 
-My bigger projects (such as [rankly](https://rankly.quovixi.com), [LinkedInspo]([url](https://linkedinspo.quovixi.com) and [RSVPcalc]([url](https://rsvpcalc.quovixi.com)) live on their own subdomains, but the following projects live on quovixi.com directly:
+My bigger projects (such as [rankly](https://rankly.quovixi.com), [LinkedInspo](https://linkedinspo.quovixi.com) and [RSVPcalc](https://rsvpcalc.quovixi.com)) live on their own subdomains, but the following projects live on quovixi.com directly:
 
 ### Resume ([/resume](https://quovixi.com/resume))
 
