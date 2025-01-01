@@ -207,17 +207,23 @@ button:hover {
 
 .divider-footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem; 
     padding: 1rem;
     font-size: 1rem;
+    text-align: center; 
+}
+
+.divider-footer div {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
     .divider-footer {
-        flex-direction: column;
-        gap: 0.6rem;
         font-size: 0.9rem;
     }
 }
