@@ -39,10 +39,31 @@ a {
     text-decoration: none;
 }
 
+a {
+    color: #FEBA3C;
+    text-decoration: none;
+    position: relative;
+}
+
 a:hover,
 a:focus,
 a:active {
-    color: #FFD483;
+    color: #FEBA3C;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #FEBA3C;
+    transition: width 0.3s ease;
+}
+
+a:hover::after, a:focus::after {
+    width: 100%; 
 }
 
 #game {
@@ -184,10 +205,20 @@ button:hover {
     }
 }
 
-footer {
-    text-align: center;
-    padding: 2em 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+.divider-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.divider-footer a {
+    text-decoration: none;
+    color: #FEBA3C;
+}
+
+.divider-footer p {
+    margin: 0;
 }
