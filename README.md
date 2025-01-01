@@ -12,14 +12,14 @@ This project started life as my submission for CS50's Homepage problem set, to t
 
 My bigger projects (such as [rankly](https://rankly.quovixi.com), [LinkedInspo](https://linkedinspo.quovixi.com) and [RSVPcalc](https://rsvpcalc.quovixi.com)) live on their own subdomains, but the following projects live on quovixi.com directly:
 
-### Resume ([/resume](https://quovixi.com/resume))
+### [/resume](https://quovixi.com/resume)
 
-A page detailing my background, experience, education and skills. 
+A single page detailing my background, experience, education and skills. Makes liberal use of Bootstrap accordions.
 
-### quonnections ([/quonnections](https://quovixi.com/quonnections))
+### [/quonnections](https://quovixi.com/quonnections)
 
-A connecting wall style quiz.
+A connecting wall style quiz. The first of several I have planned.
 
-### perfect match ([/perfect-match](https://quovixi.com/perfect-match))
+### [/perfect-match](https://quovixi.com/perfect-match)
 
-A name compatibility game I used to play as a kid.
+A name compatibility game I used to play as a kid. Styled to look like a 90s kid's notebook.
