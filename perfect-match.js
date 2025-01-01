@@ -46,8 +46,13 @@ function calculateCompatibility() {
             const digits = String(sum).split('').map(Number);
             nextStep.push(...digits);
         }
+
         steps.push(working);
         working = nextStep;
+
+        if (working.length === 3 && working.join('') === '100') {
+            break;
+        }
     }
 
     steps.push(working);
