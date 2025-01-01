@@ -321,6 +321,14 @@ li::marker {
     font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+    .divider-footer {
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
 .divider-footer a {
     text-decoration: none;
     color: #FEBA3C;
@@ -329,5 +337,3 @@ li::marker {
 .divider-footer p {
     margin: 0;
 }
-
-
