@@ -23,3 +23,7 @@ A connecting wall style quiz. The first of several I have planned.
 ### [/perfect-match](https://quovixi.com/perfect-match)
 
 A name compatibility game I used to play as a kid. Styled to look like a 90s kid's notebook.
+
+### [/playground](https://quovixi.com/playground)
+
+Practicing my CSS skills by designing different themes for the Tito widget.
