@@ -1,0 +1,251 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.open-sans-regular {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.outfit-regular {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-grotesk-regular {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ysabeau-office-regular {
+  font-family: "Ysabeau Office", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+}
+
+.playground-h1 {
+  font-family: "Space Grotesk", serif;
+  text-align: center;
+  margin: 1.6rem 0;
+  background-image: linear-gradient(to right, #3D40EF, #726BFF, #20C997, #FEBA3C, #F435AB);
+  color: transparent;
+  background-size: 200%;
+  background-position: -100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: animated-gradient 10s infinite alternate-reverse;
+}
+
+@keyframes animated-gradient {
+  to {
+    background-position: 100%;
+  }
+}
+
+.lead {
+  width: 60%;
+  text-wrap: balance;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+.lead a:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.theme-selectors {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.reset-link {
+  font-size: 0.9rem;
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.reset-link:hover {
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.theme-selectors button {
+  font-size: 1.2rem;
+}
+
+.theme-selectors button:hover {
+  transform: rotate(1deg);
+}
+
+.btn-clean {
+  font-family: "Outfit", serif;
+  background-color: #3D40EF;
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 0.4rem 1rem;
+  margin: 0.4rem;
+}
+
+.btn-clean:hover,
+.btn-clean:active,
+.btn-clean:focus {
+  background-color: #3639D7;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-frontier {
+  font-family: Georgia, sans-serif;
+  background: linear-gradient(to bottom, #8b5e3c, #6b4329);
+  color: white;
+  border-radius: 2px;
+  border: 2px solid #8b5e3c;
+  padding: 0.4rem 1rem;
+  margin: 0.4rem; 
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-frontier:hover,
+.btn-frontier:active,
+.btn-frontier:focus {
+  background: #6b4329;
+  cursor: pointer;
+}
+
+.btn-peony {
+  font-family: "Ysabeau Office", sans-serif;
+  background-color: #fbf7f5;
+  color: #725664;
+  border-radius: 30px;
+  border: solid 1px #725664;
+  padding: 0.5rem 1.2rem;
+  margin: 0.4rem;
+}
+
+.btn-peony:hover,
+.btn-peony:active,
+.btn-peony:focus {
+  background-color: #f9f1f1;
+  cursor: pointer;
+}
+
+.btn-stellar {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #F435AB;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 0.4rem 1rem;
+  margin: 0.4rem;
+}
+
+.btn-stellar:hover,
+.btn-stellar:active,
+.btn-stellar:focus {
+  background-color: #BE2985;
+  border: none;
+  cursor: pointer;
+}
+
+.download-link {
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.download-link:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.widget-bg {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: white;
+}
+
+@media(max-width:37.5rem) {
+  .widget-bg {
+    padding: 0;
+  }
+}
+
+.divider-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; 
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center; 
+}
+
+.divider-footer div {
+  display: flex;
+  gap: 1.5rem; 
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .divider-footer {
+      font-size: 0.9rem;
+  }
+}
+
+.divider-footer a {
+  text-decoration: none;
+  color: #FB3196;
+  font-size: 1.2em;
+}
+
+.divider-footer a:hover {
+  color: #8F76FF;
+}
+
+.divider-footer p {
+  margin: 0;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+@media (max-width: 768px) {
+    .lead {
+      width: 90%;
+    }
+
+    .theme-selectors button {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Rye&family=Space+Grotesk:wght@300..700&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1cafd556b6.js" crossorigin="anonymous"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ed4a631b-0d49-40eb-9928-b5fe989705d7"></script>
+    <title>Tito Widget Playground</title>
+    <meta property="og:title" content="quovixi | Tito Widget Playground" />
+    <meta property="og:description" content="Applying fun themes to the Tito widget. A project by Vicky Carmichael." />
+    <meta property="og:url" content="https://quovixi.com/" />
+    <meta property="og:image" content="https://quovixi.com/assets/playground.png" />
+    <link rel="stylesheet" href="playground.css">
+    <link id="widget-stylesheet" rel="stylesheet" href="themes/original.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://js.tito.io/v2/with/inline/without/widget-css" async></script>
+  </head>
+  <body>
+    <main> 
+      <h1 class="playground-h1">Tito Widget Playground</h1>
+      <div class="lead">
+        <p>Applying fun themes to the <a href="https://ti.to/docs/api/widget/" target="_blank">Tito widget</a>. Feel free to grab the CSS via the link under each demo, and adapt it for your own use. More coming soon!</p>
+      </div>
+      <div class="theme-selectors">
+        <button class="btn-clean" onclick="applyTheme('themes/clean.css')">Clean</button>
+        <button class="btn-frontier" onclick="applyTheme('themes/frontier.css')">Frontier</button>
+        <button class="btn-peony" onclick="applyTheme('themes/peony.css')">Peony</button>
+        <button class="btn-stellar" onclick="applyTheme('themes/stellar.css')">Stellar</button>
+        <br>
+        <a href="#" class="reset-link" onclick="resetStyles(); return false;"><i class="fa-solid fa-rotate-left"></i> Reset styles</a>
+      </div>
+      <div id="widget-container" class="widget-bg">
+        <tito-widget event="vickyc/sample-event"></tito-widget>
+        <a id="download-css" href="#" download="theme.css" class="download-link">Get this theme's CSS</a>
+      </div>
+      <footer class="footer mt-4 mb-4 divider-footer">
+        <p><i class="fa-regular fa-copyright fa-xs"></i> Vicky Carmichael, <span id="year"></span></p>
+        <div>
+            <a href="https://quovixi.com" target="_blank"><i class="fa-solid fa-link"></i></a>
+            <a href="https://www.linkedin.com/in/vickycarmichael/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://bsky.app/profile/quovixi.com" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
+            <a href="https://github.com/quovixi" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+    </main>
+    <script src="playground.js"></script>
+  </body>
+</html>
