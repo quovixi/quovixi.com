@@ -36,6 +36,13 @@
   font-style: normal;
 }
 
+.nunito-regular {
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -77,6 +84,7 @@ body {
 .theme-selectors {
   text-align: center;
   margin: 1rem 0;
+  text-wrap: balance;
 }
 
 .reset-link {
@@ -117,6 +125,24 @@ body {
 .btn-clean:active,
 .btn-clean:focus {
   background-color: #3639D7;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-vesper {
+  font-family: "Nunito", sans-serif;
+  background-color: #16232e;
+  color: #EFF9FE;
+  border-radius: 10px;
+  border: none;
+  padding: 0.4rem 1rem;
+  margin: 0.4rem;
+}
+
+.btn-vesper:hover,
+.btn-vesper:active,
+.btn-vesper:focus {
+  background-color: #0f1a23;
   border: none;
   cursor: pointer;
 }

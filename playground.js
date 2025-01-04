@@ -7,12 +7,14 @@ function applyTheme(themePath) {
     'themes/frontier.css': '#FAF9F7',
     'themes/peony.css': '#FCFAF9',
     'themes/stellar.css': '#1B1E3C',
+    'themes/vesper.css': '#0C141C',
   };
   const themeLinkStyles = {
     'themes/clean.css': { color: '#3D40EF', textDecoration: 'none' },
     'themes/frontier.css': { color: '#8B5E3C', textDecoration: 'none' },
     'themes/peony.css': { color: '#725664', textDecoration: 'none' },
     'themes/stellar.css': { color: '#F435AB', textDecoration: 'none' },
+    'themes/vesper.css': { color: '#81FAE4', textDecoration: 'none' },
   };
 
   if (stylesheet && widgetContainer && downloadLink) {
