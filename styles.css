@@ -312,6 +312,11 @@ li::marker {
     color: var(--bs-gray-200);
 }
 
+.newsletter-signup {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .divider-footer {
     display: flex;
     flex-direction: column;
