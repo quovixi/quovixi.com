@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 const SHEET_ID = '1ETd8ZgatNS7e6_3RkqBF2gzQMsJ5UYpWU9pVJ862cGI'; 
-const API_KEY = 'AIzaSyA4jHY6QUdjESeseli9ENNLW61tTz2LErE'; 
+const API_KEY = process.env.GOOGLE_API_KEY;; 
 const RANGE = 'Sheet1!A:F'; 
 
 const itemList = document.getElementById('itemList');
