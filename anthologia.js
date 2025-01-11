@@ -8,8 +8,12 @@ import type { Context } from "@netlify/edge-functions";
 export default async (request: Request, context: Context) => {
     const value = Netlify.env.get("GOOGLE_API_KEY");
 
-    return new Response(`GOOGLE_API_KEY is "${value}".`, {
-    headers: { "content-type": "text/html" },
+    if (!value) {
+        return new Response("GOOGLE_API_KEY not found.", { status: 404 });
+    }
+
+    return new Response(JSON.stringify({ key: value }), {
+        headers: { "content-type": "application/json" },
     });
 };
 
@@ -33,9 +37,12 @@ let currentItem = null;
 async function fetchApiKey() {
     try {
         const response = await fetch('/.netlify/functions/your-edge-function-name');
-        if (!response.ok) throw new Error('Failed to fetch API key');
-        const data = await response.text();
-        API_KEY = data; // Or parse the response if it's not plain text
+        if (!response.ok) {
+            throw new Error(`Failed to fetch API key: ${response.statusText}`);
+        }
+        const data = await response.json();
+        API_KEY = data.key;
+        console.log("API Key fetched:", API_KEY);
     } catch (error) {
         console.error('Error fetching API key:', error);
     }
