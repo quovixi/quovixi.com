@@ -3,12 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('year').textContent = year;
     });
 
-export default async (request, context) => {
-    const API_KEY = Netlify.env.get("GOOGLE_API_KEY");
+exports.handler = async function (event, context) {
+    const API_KEY = process.env.GOOGLE_API_KEY;
     
-    return new Response(`Value of API_KEY for ${context.site.name} is ${value}.`, {
-        headers: { "content-type": "text/html" },
-    });
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ message: `Value of GOOGLE_API_KEY is ${value}.` }),
+    };
 };
 
 const SHEET_ID = '1ETd8ZgatNS7e6_3RkqBF2gzQMsJ5UYpWU9pVJ862cGI'; 
