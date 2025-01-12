@@ -3,17 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('year').textContent = year;
     });
 
-import type { Context } from "@netlify/edge-functions";
-
-export default async (request: Request, context: Context) => {
-    const value = Netlify.env.get("GOOGLE_API_KEY");
-
-    if (!value) {
-        return new Response("GOOGLE_API_KEY not found.", { status: 404 });
-    }
-
-    return new Response(JSON.stringify({ key: value }), {
-        headers: { "content-type": "application/json" },
+export default async (request, context) => {
+    const API_KEY = Netlify.env.get("GOOGLE_API_KEY");
+    
+    return new Response(`Value of API_KEY for ${context.site.name} is ${value}.`, {
+        headers: { "content-type": "text/html" },
     });
 };
 
@@ -30,45 +24,26 @@ const reviewContent = document.getElementById('reviewContent');
 const toggleSpoilerFree = document.getElementById('toggleSpoilerFree');
 const toggleSpoiler = document.getElementById('toggleSpoiler');
 
-let API_KEY = null;
 let items = []; 
 let currentItem = null; 
 
-async function fetchApiKey() {
-    try {
-        const response = await fetch('/.netlify/functions/your-edge-function-name');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch API key: ${response.statusText}`);
-        }
-        const data = await response.json();
-        API_KEY = data.key;
-        console.log("API Key fetched:", API_KEY);
-    } catch (error) {
-        console.error('Error fetching API key:', error);
-    }
-}
-
 async function fetchItems() {
-    if (!API_KEY) {
-        await fetchApiKey();
-    }
-
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
         if (data.values) {
             items = data.values.slice(1).map(row => ({
-                title: row[0] || 'Untitled',
-                author: row[1] || 'Unknown author',
-                category: row[2] || 'Uncategorised',
-                review: row[3] || '',
+                title: row[0] || 'Untitled', 
+                author: row[1] || 'Unknown author', 
+                category: row[2] || 'Uncategorised', 
+                review: row[3] || '', 
                 thumbnail: row[4] || '',
             }));
 
-            populateFilters(items);
+            populateFilters(items); 
 
-            currentOffset = 0;
+            currentOffset = 0; 
             loadItems(items);
         }
     } catch (error) {
