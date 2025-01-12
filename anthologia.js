@@ -3,20 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('year').textContent = year;
     });
 
-let API_KEY = '';
-
-async function fetchApiKey() {
-    try {
-        const response = await fetch('/.netlify/functions/get-api-key');
-        const data = await response.json();
-        return data.apiKey;
-    } catch (error) {
-        console.error('Error fetching API key:', error);
-        return null;
-    }
-}
-
 const SHEET_ID = '1ETd8ZgatNS7e6_3RkqBF2gzQMsJ5UYpWU9pVJ862cGI'; 
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 const RANGE = 'Sheet1!A:F'; 
 
 const itemList = document.getElementById('itemList');
@@ -33,26 +21,23 @@ let items = [];
 let currentItem = null; 
 
 async function fetchItems() {
-    if (!API_KEY) {
-        console.error('API key is not available.');
-        return;
-    }
-
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
         if (data.values) {
             items = data.values.slice(1).map(row => ({
-                title: row[0] || 'Untitled',
-                author: row[1] || 'Unknown author',
-                category: row[2] || 'Uncategorised',
-                review: row[3] || '',
+                title: row[0] || 'Untitled', 
+                author: row[1] || 'Unknown author', 
+                category: row[2] || 'Uncategorised', 
+                review: row[3] || '', 
                 thumbnail: row[4] || '',
             }));
 
-            populateFilters(items); // Populate filters based on categories
-            loadItems(items); // Load the initial set of items
+            populateFilters(items); 
+
+            currentOffset = 0; 
+            loadItems(items);
         }
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -128,13 +113,9 @@ categoryFilter.addEventListener('change', () => {
     loadItems(items, { category: categoryFilter.value });
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    API_KEY = await fetchApiKey();
-    if (API_KEY) {
-        fetchItems();
-    } else {
-        console.error('Failed to retrieve API key.');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    currentOffset = 0; 
+    loadItems(items);
 });
 
 function showDetails(item) {
@@ -215,9 +196,10 @@ function getAuthorPrefix(category) {
 }
 
 categoryFilter.addEventListener('change', () => {
-    currentOffset = 0; 
-    itemList.innerHTML = ''; 
-    loadItems(items, { category: categoryFilter.value }); 
+    const filter = {
+        category: categoryFilter.value,
+    };
+    loadItems(items, filter);
 });
 
 fetchItems();
