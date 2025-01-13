@@ -3,21 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('year').textContent = year;
     });
 
-let API_KEY = '';
-
-async function fetchApiKey() {
-    try {
-        const response = await fetch('/.netlify/functions/get-api-key');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        return data.apiKey;
-    } catch (error) {
-        console.error('Error fetching API key:', error.message);
-        return null;
-    }
-}
 
 const SHEET_ID = '1ETd8ZgatNS7e6_3RkqBF2gzQMsJ5UYpWU9pVJ862cGI'; 
 const RANGE = 'Sheet1!A:F'; 
@@ -39,7 +24,11 @@ async function fetchItems() {
     const url = '/.netlify/functions/get-api-key'; 
     try {
         const response = await fetch(url);
-        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json(); 
         if (data.values) {
             items = data.values.slice(1).map(row => ({
                 title: row[0] || 'Untitled',
@@ -50,12 +39,15 @@ async function fetchItems() {
             }));
 
             populateFilters(items); 
-            loadItems(items); 
+            loadItems(items);  
+        } else {
+            console.error('No data found in API response.');
         }
     } catch (error) {
         console.error('Error fetching data:', error.message);
     }
 }
+
 
 function populateFilters(items) {
     const categories = [...new Set(items.map(item => item.category).filter(Boolean))];
@@ -123,15 +115,6 @@ categoryFilter.addEventListener('change', () => {
     currentOffset = 0;
     itemList.innerHTML = '';
     loadItems(items, { category: categoryFilter.value });
-});
-
-document.addEventListener('DOMContentLoaded', async () => {
-    API_KEY = await fetchApiKey();
-    if (API_KEY) {
-        fetchItems();
-    } else {
-        console.error('Failed to retrieve API key.');
-    }
 });
 
 function showDetails(item) {
@@ -215,4 +198,8 @@ categoryFilter.addEventListener('change', () => {
     currentOffset = 0; 
     itemList.innerHTML = ''; 
     loadItems(items, { category: categoryFilter.value }); 
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await fetchItems(); 
 });
