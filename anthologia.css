@@ -83,13 +83,20 @@ a:hover {
 }
 
 .filters select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;   
+    appearance: none;        
     font-family: inherit;
     padding: 10px;
+    padding-right: 35px;
     background-color: #fff;
     color: #373538;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none" stroke="gray" stroke-width="1.5"><path d="M1 3 l4 4 l4 -4"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
 }
 
 .filters select:hover {
