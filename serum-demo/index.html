@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Serum demo</title>
+<link rel="stylesheet" href="serum.css">
+<style>
+  /* Demo-only bits, outside Serum's own stylesheet */
+  [data-nojs] { display: none !important; }
+  .demo-toast { position: fixed; left: 50%; bottom: 20px; transform: translate(-50%, 12px); opacity: 0; pointer-events: none;
+    background: var(--ink); color: var(--bg); font: 500 13px/1.4 var(--face); padding: 9px 14px; border-radius: 9px;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 30%); transition: opacity .18s, transform .18s; z-index: 50; max-width: calc(100% - 32px); text-align: center; }
+  .demo-toast.on { opacity: 1; transform: translate(-50%, 0); }
+  .demo-confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 40; }
+  .demo-confetti i { position: absolute; top: -12px; width: 7px; height: 11px; border-radius: 2px; animation: demo-fall 1.8s cubic-bezier(.2,.6,.4,1) forwards; }
+  @keyframes demo-fall { to { top: 105%; transform: rotate(540deg); opacity: .2; } }
+  @media (prefers-reduced-motion: reduce) { .demo-confetti { display: none; } .demo-toast { transition: none; } }
+</style>
+<script src="data.js?v=5"></script>
+<script src="app.js?v=5"></script>
+</head>
+<body></body>
+</html>

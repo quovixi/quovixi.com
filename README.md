@@ -12,6 +12,10 @@ This project started life as my submission for CS50's Homepage problem set, to t
 
 My bigger projects (such as [rankly](https://rankly.quovixi.com), [LinkedInspo](https://linkedinspo.quovixi.com) and [RSVPcalc](https://rsvpcalc.quovixi.com)) live on their own subdomains, but the following projects live on quovixi.com directly:
 
+### [/serum](https://quovixi.com/serum)
+
+An overview of Serum, the CRM and sales playbook I built for Tito on CARLOS with Claude, with a playable demo. The demo in `serum-demo/` runs entirely in the browser: it uses Serum's own stylesheet and markup, filled with made-up prospects (`data.js`), and a small script (`app.js`) handles ticking steps, moving stages and adding notes and to-dos in memory. A reload resets it.
+
 ### [/resume](https://quovixi.com/resume)
 
 A single page detailing my background, experience, education and skills. Makes liberal use of Bootstrap accordions.

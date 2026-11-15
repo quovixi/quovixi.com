@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>quovixi | Serum</title>
+        <meta property="og:title" content="quovixi | Serum" />
+        <meta property="og:description" content="A little CRM and sales playbook I built for Tito, running on CARLOS and made with Claude. Try the demo." />
+        <meta property="og:url" content="https://quovixi.com/serum" />
+        <meta property="og:image" content="https://quovixi.com/assets/serum.png" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/1cafd556b6.js" crossorigin="anonymous"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="ed4a631b-0d49-40eb-9928-b5fe989705d7"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link href="serum.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body>
+        <a href="/index" class="back-to-projects">&larr; Back to projects</a>
+
+        <h1>Serum</h1>
+        <div class="lead">
+            <p>A lightweight CRM and integrated sales playbook I built for the team at Tito to stay on top of our pipeline.</p>
+        </div>
+
+        <aside class="name-card" aria-labelledby="name-h">
+            <span class="name-mark" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16A2.5 2.5 0 0 1 4 13.5z"/></svg></span>
+            <div>
+                <h2 id="name-h">Why Serum?</h2>
+                <p>Say CRM out loud: see-ar-em. Serum.</p>
+            </div>
+            <span class="name-water" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16A2.5 2.5 0 0 1 4 13.5z"/></svg></span>
+        </aside>
+
+        <section class="demo" aria-label="Serum demo">
+            <div class="demo-window">
+                <div class="demo-chrome" aria-hidden="true"><span></span><span></span><span></span><p>Serum demo</p></div>
+                <iframe src="/serum-demo/" title="A playable demo of Serum, filled with made-up prospects" loading="lazy"></iframe>
+            </div>
+            <p class="demo-caption">Interactive demo with made-up data. <a href="/serum-demo/" target="_blank" data-umami-event="Serum demo full screen">Open in full screen <i class="fa-solid fa-arrow-up-right-from-square fa-2xs"></i></a></p>
+        </section>
+
+        <h2 class="features-head">What it does</h2>
+
+        <div class="features">
+            <div class="feature">
+                <img src="assets/serum/arrivals.png" width="758" height="451" alt="Two cards from prospect pages: one won after Lead, Talking, Trying it and Proposal sent, and one switched after Talking and Trying it">
+                <div>
+                    <h2>Built-in playbooks for our two types of prospect</h2>
+                    <p>The sales funnel looks different for a brand new lead versus an existing customer switching from an older version of Tito. So the playbook steps change depending on where the prospect came from.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="assets/serum/autotick.png" width="645" height="350" alt="The Lead playbook, where Reply and offer a call shows Ticked when Vicky emailed them, and the chase waits on their reply">
+                <div>
+                    <h2>Updates itself based on team activity</h2>
+                    <p>People who submit an enquiry via the Tito website are added to Serum automatically, and it connects to our email, calendar and third-party support tool, so it knows when we've emailed a prospect and when they've replied. It ticks off the playbook step for us, so nobody has to remember to.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="assets/serum/todo.png" width="613" height="744" alt="Serum's morning email: 2 things to do today, one of them overdue, with a button to open To do">
+                <div>
+                    <h2>A consolidated daily task list</h2>
+                    <p>Any outstanding playbook steps due today show in one list alongside to-dos the team adds manually. Serum sends an optional email at 7am to each teammate with their day's tasks, on days there's something due.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="assets/serum/claude.png" width="685" height="558" alt="A conversation where Claude moves Harbour Lights Festival to Talking and adds a note in Serum, then offers to run /prospect-demo">
+                <div>
+                    <h2>Designed to work with Claude</h2>
+                    <p>We're already using Claude throughout the day, so now we can ask it to create or update a prospect, or even use skills we've set up, like <code>/prospect-demo</code>, and capture the details in Serum.</p>
+                </div>
+            </div>
+            <div class="feature wide">
+                <img src="assets/serum/reports.png" width="1200" height="323" alt="Report cards for Won, Switched, Not a fit and Lost">
+                <div>
+                    <h2>Only the metrics that matter to us</h2>
+                    <p>What did we win, are they paying yet, where do our best customers come from, and why did we lose the ones we lost?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="built">
+            <h2>How I built it</h2>
+            <p>Serum is one Go binary and one SQLite database running on <a href="https://carlosframework.com/" target="_blank" data-umami-event="CARLOS">CARLOS</a>, a system for building better web apps with AI agents. I built it with Claude Code in under a week, in a language I'd never written before.</p>
+            <p>I wrote up the whole story, including the decisions I made (and unmade) along the way, on my blog.</p>
+            <p><a href="https://vicky.pika.page/posts/new-project-serum" target="_blank" data-umami-event="Serum blog post">Read the full story <i class="fa-solid fa-arrow-up-right-from-square fa-2xs"></i></a></p>
+            <div class="meta">
+                <span>Go</span>
+                <span>SQLite</span>
+                <span>CARLOS</span>
+                <span>Claude Code</span>
+                <span>MCP</span>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('year').textContent = new Date().getFullYear();
+            });
+        </script>
+        <footer class="footer mt-4 mb-4 divider-footer">
+          <p><i class="fa-regular fa-copyright fa-xs"></i> Vicky Carmichael, <span id="year"></span></p>
+          <div>
+              <a href="https://quovixi.com"><i class="fa-solid fa-link"></i></a>
+              <a href="https://www.linkedin.com/in/vickycarmichael/" target="_blank" data-umami-event="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://bsky.app/profile/quovixi.com" target="_blank" data-umami-event="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+              <a href="https://github.com/quovixi" target="_blank" data-umami-event="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </footer>
+    </body>
+</html>

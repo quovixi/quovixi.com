@@ -1,0 +1,272 @@
+.back-to-projects {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+/* The name, in a card styled like Serum's Won card */
+.name-card {
+    --c: #8d8cf5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    padding: 1.1rem 1.4rem;
+    border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+    border-radius: 12px;
+    background:
+        linear-gradient(120deg, color-mix(in srgb, var(--c) 14%, #17181c), #17181c 70%);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+.name-mark {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--c);
+}
+
+.name-mark svg {
+    width: 22px;
+    height: 22px;
+    fill: #17181c;
+}
+
+.name-card h2 {
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0 0 0.15rem;
+}
+
+.name-card p {
+    margin: 0;
+    color: var(--bs-gray-400);
+}
+
+.name-card > div {
+    position: relative;
+    z-index: 1;
+    padding-right: 3rem;
+}
+
+.name-water {
+    position: absolute;
+    right: -18px;
+    bottom: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--c) 12%, transparent);
+    display: grid;
+    place-items: center;
+}
+
+.name-water svg {
+    width: 58px;
+    height: 58px;
+    fill: color-mix(in srgb, var(--c) 30%, #0f1013);
+    transform: translate(-10px, -10px) rotate(-8deg);
+}
+
+/* The demo, in a simple window */
+.demo {
+    max-width: 1200px;
+    margin: 1rem auto 4.5rem;
+}
+
+.demo-window {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--bs-gray-700);
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+    background: #0f1013;
+}
+
+.demo-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #17181c;
+    border-bottom: 1px solid #24242b;
+}
+
+.demo-chrome span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #31313a;
+}
+
+.demo-chrome p {
+    margin: 0 auto;
+    padding-right: 51px;
+    font-size: 0.8rem;
+    color: var(--bs-gray-500);
+}
+
+.demo iframe {
+    display: block;
+    width: 100%;
+    height: min(760px, 80vh);
+    border: 0;
+}
+
+.demo-caption {
+    max-width: 760px;
+    margin: 1.75rem auto 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--bs-gray-400);
+    text-wrap: balance;
+}
+
+/* Features: real-size components on a fixed grid, text beside them */
+.features-head {
+    text-align: center;
+    margin: 0 auto 2.5rem;
+    padding: 0;
+}
+
+.features {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: minmax(0, 720px) minmax(0, 380px);
+    justify-content: center;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.feature:nth-child(even) {
+    grid-template-columns: minmax(0, 380px) minmax(0, 720px);
+}
+
+.feature:nth-child(even) img {
+    order: 2;
+    justify-self: start;
+}
+
+/* Each visual hugs the side that faces its text, so the gap stays the same */
+.feature img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    justify-self: end;
+    /* the images carry transparent room for their shadows, so let rows overlap it */
+    margin-block: -28px;
+}
+
+.feature h2 {
+    text-align: left;
+    font-size: 1.4rem;
+    padding: 0;
+    margin-bottom: 0.6rem;
+    text-wrap: balance;
+}
+
+.feature p {
+    color: var(--bs-gray-300);
+    margin: 0;
+    text-wrap: pretty;
+}
+
+.feature code {
+    color: #FEBA3C;
+    font-size: 0.9em;
+}
+
+/* A wide visual goes full width under its text */
+.feature.wide,
+.feature.wide:nth-child(even) {
+    grid-template-columns: minmax(0, 1180px);
+    row-gap: 1rem;
+}
+
+.feature.wide > div {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feature.wide h2 {
+    text-align: center;
+}
+
+.feature.wide img {
+    order: 2;
+    justify-self: center;
+}
+
+@media (max-width: 900px) {
+    .feature,
+    .feature:nth-child(even) {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 1rem;
+    }
+
+    .feature:nth-child(even) img {
+        order: 0;
+    }
+
+    .feature img,
+    .feature:nth-child(even) img {
+        justify-self: center;
+    }
+
+    .feature.wide img {
+        order: 2;
+    }
+}
+
+.built {
+    max-width: 680px;
+    margin: 4rem auto 3rem;
+    text-align: center;
+}
+
+.built p {
+    color: var(--bs-gray-300);
+    text-wrap: balance;
+}
+
+/* Centred copy wraps evenly, with no orphan words */
+h1, .lead p, .demo-caption {
+    text-wrap: balance;
+}
+
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.meta span {
+    border: 1px solid var(--bs-gray-700);
+    border-radius: 999px;
+    padding: 0.15rem 0.75rem;
+    font-size: 0.85rem;
+    color: var(--bs-gray-300);
+}
+
+@media (max-width: 800px) {
+    .demo iframe {
+        height: 640px;
+    }
+}
