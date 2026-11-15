@@ -30,7 +30,7 @@ A name compatibility game I used to play as a kid, styled to look like a 90s kid
 
 ### [/playground](https://quovixi.com/playground)
 
-Practicing my CSS skills by designing different themes for the Tito widget. When a theme button is clicked, a function is called to edit the href attribute of the <link> element to load a new CSS file path (e.g., themes/clean.css), update the href attribute of the download link to point to the corresponding theme's CSS file, and adjust other styles dynamically, such as the background color of the widget container and the appearance of the download link. 
+Practicing my CSS skills by designing different themes for the Classic Tito widget. When a theme button is clicked, a function is called to edit the href attribute of the <link> element to load a new CSS file path (e.g., themes/clean.css), update the href attribute of the download link to point to the corresponding theme's CSS file, and adjust other styles dynamically, such as the background color of the widget container and the appearance of the download link. 
 
 ### [/anthologia](https://quovixi.com/anthologia)
 

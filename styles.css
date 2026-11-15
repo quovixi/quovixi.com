@@ -1,3 +1,30 @@
+/* quovixi.com: Paper
+   Every design choice lives in these tokens, so iterating is a one-line change.
+   (These are also the values to copy into Pika.) */
+:root {
+    --paper: #f6f2ea;        /* page background */
+    --card: #ffffff;         /* cards and stickers */
+    --ink: #1d1b22;          /* text, outlines and hard shadows */
+    --ink-soft: #5c5866;     /* secondary text */
+    --dots: rgba(29, 27, 34, 0.09);
+    --accent: #2f4bff;       /* links, underline, banner */
+    --pink: #ff6f91;
+    --mint: #38c9a0;
+    --sun: #ffd166;
+
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+    --font-sticker: var(--font-body);
+
+    --outline: var(--ink);   /* sticker outlines */
+    --shadow-ink: var(--ink); /* hard sticker shadows */
+
+    --radius: 16px;
+    --border: 2px solid var(--outline);
+    --shadow: 6px 6px 0 var(--shadow-ink);
+    --tilt: 0.6deg;          /* how far cards lean */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +35,14 @@ html {
     scroll-behavior: smooth;
 }
 
-.ubuntu-sans-regular {
-  font-family: "Ubuntu Sans", sans-serif;
-}
-
 body {
-    font-family: "Ubuntu Sans", sans-serif;
+    font-family: var(--font-body);
     padding: 0 1em;
-    line-height: 1.5;
-    background-color: var(--bs-gray-900);
-    background-image:  radial-gradient(#33393e 0.45px, transparent 0.45px), radial-gradient(#33393e 0.45px, #212529 0.45px);
-    background-size: 18px 18px;
-    background-position: 0 0,9px 9px;
-    color: var(--bs-gray-100);
+    line-height: 1.6;
+    background-color: var(--paper);
+    background-image: radial-gradient(var(--dots) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--ink);
     max-width: 1500px;
     -webkit-font-smoothing: antialiased;
 }
@@ -30,131 +52,121 @@ body {
 }
 
 h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
     text-align: center;
-    padding: 1rem 0;
-    font-size: 2rem;
+    padding: 1.5rem 0 1rem;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+/* A hand-drawn underline for one word in a heading */
+.squiggle {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'%3E%3Cpath d='M2 8 Q50 2 100 7 T198 5' fill='none' stroke='%232f4bff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") bottom / 100% 14px no-repeat;
+    padding-bottom: 6px;
 }
 
 h2 {
-    font-size: 1.6rem;
+    scroll-margin-top: 1rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.8rem;
     padding: 1rem 0;
     margin-bottom: 0.4rem;
     text-align: center;
+    letter-spacing: -0.01em;
 }
 
 h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: 1.3rem;
 }
 
+/* Projects list: cards like stickers */
 .projects-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin: 3rem auto 1rem;
+    gap: 2.2rem;
+    margin: 3rem auto 3rem;
     width: 100%;
-    max-width: 60%;
+    max-width: 980px;
 }
 
 .project {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    gap: 1.5rem; 
-    margin-bottom: 1.6rem;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 16px;
+    background: var(--card);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     position: relative;
+    transform: rotate(calc(var(--tilt) * -1));
+    transition: transform 0.25s cubic-bezier(.3, 1.4, .5, 1), box-shadow 0.25s;
+}
+
+.project:nth-child(even) {
+    transform: rotate(var(--tilt));
 }
 
 .project:hover {
-    transform: scale(1.01);
+    transform: rotate(0) translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--shadow-ink);
 }
 
 .project-image {
-    width: 100%; 
-    max-width: 400px; 
+    width: 100%;
+    max-width: 380px;
     height: auto;
-    border-radius: 4px;
+    border-radius: 10px;
+    border: var(--border);
     object-fit: cover;
 }
 
 .project-details {
     flex: 1;
-    margin-bottom: 1.6rem;
 }
 
 .project-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.4rem;
     padding: 0;
     text-align: left;
 }
 
+.project-title a {
+    color: var(--ink);
+}
+
 .project-description {
-    margin: 0.8rem 0;
-    color: var(--bs-gray-300);
+    margin: 0.4rem 0;
+    color: var(--ink-soft);
 }
 
 @media (max-width: 1000px) {
-
     .projects-container {
-        max-width: 70%;
+        max-width: 80%;
     }
 
     .project {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .project-image {
-        width: 100%;
+        max-width: none;
     }
 }
 
 @media (max-width: 685px) {
-
     .projects-container {
-        max-width: 95%;
+        max-width: 100%;
     }
-
-    .project {
-        margin-bottom: 0;
-    }
-}
-
-.custom-hr-wrapper {
-    display: flex;
-    justify-content: center;
-    @media (min-width: 800px) {
-        max-width: 50%;
-        margin: 0 auto 2rem;
-    }
-    margin: 0 auto;
-}
-
-.custom-hr {
-    display: flex;
-    align-items: center;
-    color: var(--bs-gray-700);
-    width: 100%;
-}
-
-.custom-hr::before,
-.custom-hr::after {
-    content: "";
-    flex: 1;
-    border-bottom: 2px dashed var(--bs-gray-700);
-}
-
-.custom-hr::before {
-    margin-right: 10px;
-}
-
-.custom-hr::after {
-    margin-left: 10px;
-}
-
-.custom-hr span {
-    font-size: 16px;
-    font-weight: bold;
 }
 
 button, select {
@@ -162,7 +174,7 @@ button, select {
 }
 
 a {
-    color: #FEBA3C;
+    color: var(--accent);
     text-decoration: none;
     position: relative;
 }
@@ -170,7 +182,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-    color: #FEBA3C;
+    color: var(--accent);
 }
 
 a::after {
@@ -180,12 +192,17 @@ a::after {
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #FEBA3C;
+    background-color: var(--accent);
     transition: width 0.3s ease;
 }
 
 a:hover::after, a:focus::after {
-    width: 100%; 
+    width: 100%;
+}
+
+/* Image links don't get the underline */
+.project > a::after {
+    display: none;
 }
 
 ul li {
@@ -193,62 +210,119 @@ ul li {
 }
 
 li::marker {
-  color: var(--bs-gray);
+    color: var(--accent);
 }
 
-.resume-banner {
-    background-color: #FEBA3C;
-    position: relative;
-    width: 100vw;
-    height: 300px;
-    overflow: hidden;
-    margin-left: calc(-50vw + 50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Dark Paper: the same stickers and outlines on dark paper (used on the Serum page) */
+.dark {
+    --paper: #131218;
+    --card: #1e1c25;
+    --ink: #f1eee7;
+    --ink-soft: #a9a5b4;
+    --dots: rgba(255, 255, 255, 0.07);
+    --accent: #8c9bff;
+    --outline: #45414f;      /* softer than the text, so outlines don't glare */
+    --shadow-ink: #000000;
+    --border: 2px solid var(--outline);
+    --shadow: 6px 6px 0 var(--shadow-ink);
+    color-scheme: dark;
 }
 
-.banner-image {
-    width: auto;
-    height: 100%;
+/* Navigation */
+.navbar {
+    background: transparent !important;
 }
 
-@media (max-width: 768px) {
-    .resume-banner {
-        height: 200px;
-    }
-}
-
-.navbar-brand {
-    color: #FEBA3C;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.navbar-brand:hover, .navbar-brand:focus {
-    color: #FEBA3C;;
-    text-decoration: none;
-    font-size: var(--bs-nav-link-font-size);
-}
-
-.navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="%23FEBA3C" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-}
-
+.navbar-brand,
 .nav-link {
-    color: #FEBA3C;
+    color: var(--ink) !important;
+    font-weight: 500;
     margin: 0 0.5rem;
 }
 
+.navbar-brand:hover, .navbar-brand:focus,
 .nav-link:hover, .nav-link:focus {
-    color: #FEBA3C;
+    color: var(--accent) !important;
+}
+
+.navbar-toggler {
+    border: var(--border);
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="%231d1b22" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+/* Resume banner: a sticker sheet */
+.resume-banner {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 300px;
+    overflow: hidden;
+    background: var(--accent);
+    border-bottom: var(--border);
+}
+
+/* The same banner closes the homepage, just above the footer */
+.home-banner {
+    margin-top: 4rem;
+    border-top: var(--border);
+}
+
+.resume-banner .me {
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    height: 240px;
+    transform: translateX(-50%) rotate(-2deg);
+    /* the white die-cut edge is part of the image, so this is just a soft lift */
+    filter: drop-shadow(0 8px 14px rgba(20, 20, 60, 0.28));
+}
+
+.sticker {
+    position: absolute;
+    background: var(--card);
+    color: var(--ink);
+    border: var(--border);
+    border-radius: 14px;
+    font: 600 1.05rem/1.3 var(--font-sticker);
+    padding: 9px 15px;
+    box-shadow: 4px 4px 0 var(--shadow-ink);
+    transform: rotate(var(--r, 0deg));
+    white-space: nowrap;
+}
+
+.sticker.pink { background: var(--pink); }
+.sticker.mint { background: var(--mint); }
+.sticker.sun { background: var(--sun); }
+
+.s1 { --r: -7deg; left: 18%; top: 50px; }
+.s2 { --r: 5deg; left: 24%; top: 185px; }
+.s3 { --r: 6deg; right: 18%; top: 55px; }
+.s4 { --r: -5deg; right: 23%; top: 190px; }
+
+@media (max-width: 900px) {
+    .resume-banner { height: 260px; }
+    .resume-banner .me { height: 200px; }
+    .sticker { font-size: 0.9rem; padding: 6px 11px; }
+    .s1 { left: 4%; top: 24px; }
+    .s2 { left: 6%; top: 150px; }
+    .s3 { right: 4%; top: 30px; }
+    .s4 { right: 5%; top: 156px; }
+}
+
+@media (max-width: 560px) {
+    .s2, .s4 { display: none; }
 }
 
 .lead {
     text-align: center;
     text-wrap: balance;
+    color: var(--ink-soft);
+    font-size: 1.2rem;
     @media (min-width: 800px) {
-        max-width: 50%;
+        max-width: 640px;
         margin: 0 auto 2rem;
     }
 }
@@ -264,17 +338,30 @@ li::marker {
 
 .summary {
     @media (min-width: 800px) {
-        max-width: 50%;
+        max-width: 720px;
         margin: 0 auto 2rem;
     }
     margin-top: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
+.summary p {
+    margin-bottom: 1rem;
+}
+
+/* Resume accordions: paper cards */
 .accordion {
-    --bs-accordion-border-color: var(--bs-gray-800);
+    --bs-accordion-border-color: var(--ink);
+    --bs-accordion-border-radius: var(--radius);
+    --bs-accordion-inner-border-radius: 14px;
+    --bs-accordion-btn-focus-box-shadow: none;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    background: var(--card);
     @media (min-width: 800px) {
-        max-width: 50%;
+        max-width: 720px;
         margin: 0 auto;
     }
 }
@@ -284,37 +371,29 @@ li::marker {
 }
 
 .accordion-button {
-    background-color: var(--bs-gray-900);
-    color: #FEBA3C;
+    background-color: var(--card);
+    color: var(--ink);
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: var(--bs-gray-900);
-    color: #FEBA3C;
-    text-decoration: underline;
+    background-color: var(--paper);
+    color: var(--accent);
     box-shadow: none;
 }
 
-.accordion-button::after {
-    background-image: url('data:image/svg+xml;charset=utf-8,%3csvg xmlns%3d"http%3a//www.w3.org/2000/svg" width%3d"16" height%3d"16" fill%3d"white" class%3d"bi bi-chevron-down" viewBox%3d"0 0 16 16"%3e%3cpath fill-rule%3d"evenodd" d%3d"M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/%3e%3c/svg%3e');
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+    background-image: url('data:image/svg+xml;charset=utf-8,%3csvg xmlns%3d"http%3a//www.w3.org/2000/svg" width%3d"16" height%3d"16" fill%3d"%231d1b22" viewBox%3d"0 0 16 16"%3e%3cpath fill-rule%3d"evenodd" d%3d"M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/%3e%3c/svg%3e');
     background-size: 1rem 1rem;
     background-repeat: no-repeat;
     background-position: center right;
 }
 
-.accordion-button:not(.collapsed)::after {
-    background-image: url('data:image/svg+xml;charset=utf-8,%3csvg xmlns%3d"http%3a//www.w3.org/2000/svg" width%3d"16" height%3d"16" fill%3d"white" class%3d"bi bi-chevron-up" viewBox%3d"0 0 16 16"%3e%3cpath fill-rule%3d"evenodd" d%3d"M1.646 11.354a.5.5 0 0 1 .708 0L8 5.707l5.646 5.647a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1-.708 0l-6 6a.5.5 0 0 1 0 .708z"/%3e%3c/svg%3e');
-}
-
 .accordion-item {
-    background-color: var(--bs-gray-900);
-    color: var(--bs-gray-200);
-}
-
-.newsletter-signup {
-    margin: 0 auto;
-    text-align: center;
+    background-color: var(--card);
+    color: var(--ink);
 }
 
 .divider-footer {
@@ -322,15 +401,16 @@ li::marker {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem; 
+    gap: 1rem;
     padding: 1rem;
     font-size: 1rem;
-    text-align: center; 
+    text-align: center;
+    color: var(--ink-soft);
 }
 
 .divider-footer div {
     display: flex;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     justify-content: center;
 }
 
@@ -342,10 +422,24 @@ li::marker {
 
 .divider-footer a {
     text-decoration: none;
-    color: #FEBA3C;
+    color: var(--ink);
+}
+
+.divider-footer a:hover {
+    color: var(--accent);
 }
 
 .divider-footer p {
     margin: 0;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .project, a::after {
+        transition: none;
+    }
+}
+
+/* Space between resume sections, now there are no dividers */
+#education, #experience, #skills {
+    margin-top: 4rem;
+}

@@ -6,6 +6,7 @@
 /* The name, in a card styled like Serum's Won card */
 .name-card {
     --c: #8d8cf5;
+    color: var(--ink);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -14,12 +15,13 @@
     max-width: 560px;
     margin: 0 auto 2.5rem;
     padding: 1.1rem 1.4rem;
-    border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
-    border-radius: 12px;
-    background:
-        linear-gradient(120deg, color-mix(in srgb, var(--c) 14%, #17181c), #17181c 70%);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    box-shadow: var(--shadow);
+    transform: rotate(-0.6deg);
 }
+
 
 .name-mark {
     flex: none;
@@ -29,12 +31,13 @@
     height: 46px;
     border-radius: 50%;
     background: var(--c);
+    border: var(--border);
 }
 
 .name-mark svg {
     width: 22px;
     height: 22px;
-    fill: #17181c;
+    fill: #1d1b22;
 }
 
 .name-card h2 {
@@ -47,7 +50,7 @@
 
 .name-card p {
     margin: 0;
-    color: var(--bs-gray-400);
+    color: var(--ink-soft);
 }
 
 .name-card > div {
@@ -63,7 +66,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: color-mix(in srgb, var(--c) 12%, transparent);
+    background: color-mix(in srgb, var(--c) 18%, transparent);
     display: grid;
     place-items: center;
 }
@@ -71,7 +74,7 @@
 .name-water svg {
     width: 58px;
     height: 58px;
-    fill: color-mix(in srgb, var(--c) 30%, #0f1013);
+    fill: color-mix(in srgb, var(--c) 45%, #fff);
     transform: translate(-10px, -10px) rotate(-8deg);
 }
 
@@ -82,10 +85,10 @@
 }
 
 .demo-window {
-    border-radius: 12px;
+    border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--bs-gray-700);
-    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+    border: var(--border);
+    box-shadow: var(--shadow);
     background: #0f1013;
 }
 
@@ -109,7 +112,7 @@
     margin: 0 auto;
     padding-right: 51px;
     font-size: 0.8rem;
-    color: var(--bs-gray-500);
+    color: var(--ink-soft);
 }
 
 .demo iframe {
@@ -124,7 +127,7 @@
     margin: 1.75rem auto 0;
     text-align: center;
     font-size: 0.95rem;
-    color: var(--bs-gray-400);
+    color: var(--ink-soft);
     text-wrap: balance;
 }
 
@@ -179,13 +182,13 @@
 }
 
 .feature p {
-    color: var(--bs-gray-300);
+    color: var(--ink-soft);
     margin: 0;
     text-wrap: pretty;
 }
 
 .feature code {
-    color: #FEBA3C;
+    color: var(--accent);
     font-size: 0.9em;
 }
 
@@ -239,7 +242,7 @@
 }
 
 .built p {
-    color: var(--bs-gray-300);
+    color: var(--ink-soft);
     text-wrap: balance;
 }
 
@@ -258,15 +261,24 @@ h1, .lead p, .demo-caption {
 }
 
 .meta span {
-    border: 1px solid var(--bs-gray-700);
+    border: var(--border);
     border-radius: 999px;
     padding: 0.15rem 0.75rem;
     font-size: 0.85rem;
-    color: var(--bs-gray-300);
+    color: var(--ink-soft);
 }
 
 @media (max-width: 800px) {
     .demo iframe {
         height: 640px;
     }
+}
+
+/* On dark Paper, the name card's watermark stays quiet */
+.dark .name-water {
+    background: color-mix(in srgb, var(--c) 10%, transparent);
+}
+
+.dark .name-water svg {
+    fill: color-mix(in srgb, var(--c) 30%, var(--card));
 }
