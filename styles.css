@@ -316,6 +316,15 @@ li::marker {
     .s2, .s4 { display: none; }
 }
 
+.byline {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: -0.25rem 0 1rem;
+    text-align: center;
+}
+
 .lead {
     text-align: center;
     text-wrap: balance;
